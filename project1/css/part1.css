@@ -1,0 +1,123 @@
+body{
+    margin: 0 0;
+    font-family: "Poppins";
+}
+
+
+#wrapper{
+    display: grid;
+    grid-template-areas:
+    "leftHeader  rightHeader";
+    grid-template-columns: 55vw auto;
+    grid-template-rows: 130vh;
+}
+
+#leftHeader{
+    grid-area: leftHeader;
+    padding-left: 20%;
+    padding-right: 13%;
+    padding-top: 5%;
+    background-color: #D6B234;
+}
+
+#leftHeader h1{
+    font-size: 6rem;
+    padding-right: 50%;
+    font-weight: 1000;
+    line-height: 6rem;
+}
+
+#leftHeader p{
+    font-size: 2em;
+}
+
+#rightHeader{
+    grid-area:rightHeader;
+    width: 100%;
+    height: 100%;
+}
+
+#content{
+    display:grid;
+    grid-template-areas:
+    "pillowHeading pillowHeading"
+    "leftText rightImage"
+    "leftImage rightText";
+    grid-template-columns: 50% auto;
+    grid-template-rows: 55vh 75vh 75vh;
+    margin-left:20vw;
+    margin-right:20vw;
+    margin-top: 110px;
+}
+
+#pillowHeading{
+    grid-area:pillowHeading;
+    padding-left: 12%;
+    padding-right: 12%;
+    background-color:#D6B234;
+}
+
+#pillowHeading h2{
+    font-size: 5rem;
+    text-align: center;
+}
+
+#pillowHeading p{
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+#leftText{
+    grid-area:leftText;
+    padding-left: 13%;
+    padding-right: 15%;
+    padding-top: 20%;
+}
+
+#leftText h3{
+    font-size: 2.3rem;
+    font-weight: 800;
+}
+
+#leftText p{
+    font-size: 1.4rem;
+}
+
+#rightText
+{
+    grid-area:rightText;
+    padding-left: 15%;
+    padding-right: 13%;
+}
+
+#rightText h3{
+    font-size: 2.3rem;
+    font-weight: 800;
+}
+
+#rightText p{
+    font-size: 1.4rem;
+}
+
+#leftImage{
+    grid-area:leftImage;
+}
+
+#rightImage{
+    grid-area:rightImage;
+    padding-top: 20%
+}
+
+#rightImage img, #leftImage img{
+    width: 100%;
+    height: 75%;
+}
+
+#grayBox{
+    position: absolute;
+    top: 100vh;
+    right: 0vw;
+    width: 50vw;
+    height: 75vh;
+    background-color: gray;
+}
