@@ -1,0 +1,66 @@
+html{
+    background-color: #55505c;
+
+}
+
+
+body{
+    background-color: #efe7da;
+    width: 50%;
+    margin: 0 25%;
+
+}
+
+.padThis{
+
+    padding-right: 20%;
+    padding-left: 20%;
+    width: 60%;
+}
+
+#mainTitle
+{
+    font-size: 3em;
+    text-align: center;
+}
+
+#contentHeader{
+    color: #B81427;
+}
+
+ul
+{
+    padding-left:23%;
+}
+
+img{
+    padding-right: 35%;
+    padding-left: 35%;
+    width: 30%;
+}
+
+a:link{
+    color: #640f19;
+}
+
+a:visited{
+    color:#22708e;
+}
+
+a:focus, a:hover{
+    color:#b81427;
+}
+
+a:active{
+    color:pink;
+}
+
+.projectLink
+{
+    font-weight:700;
+}
+
+header{
+    background: #c3bdcd;
+    color: #22708e;
+}
