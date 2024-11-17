@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="random-phrases.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron">
+</head>
+
+<body>
+        <header>
+            <h1>Random Ingredients in Monster Energy Zero Ultra</h1>
+        </header>
+
+        <div id="monster">
+            <h2>
+                
+            </h2>
+        </div>
+        <button>
+           <h3>
+            Random Ingredient!
+           </h3>
+        </button>
+        
+    <footer>
+        Project by Chase Collins
+    </footer>
+
+    <script>
+        "use strict";
+        function displayQuote()
+        {
+            let ingredients = ["Erythritol", "Sodium Citrate", "Niacinamide", "Pantothenate", "Inositol", "Panax Ginseng Flavor"];
+
+        let ingredient = document.querySelector("h2");
+        let randomChoice = Math.floor(Math.random() * 6);
+        ingredient.innerHTML = ingredients[randomChoice];
+        }
+
+        displayQuote();
+
+        let button = document.querySelector("button");
+        button.addEventListener("click", displayQuote);
+    </script>
+    
+</body>  
+
+</html>
