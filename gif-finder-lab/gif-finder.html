@@ -189,7 +189,7 @@
         // 10 - loop through the array of results
         for (let i=0;i<results.length;i++){
             let result = results[i];
-        }
+
 
         // 11 - get the URL to the GIF
         let smallURL = result.images.fixed_width_small.url;
@@ -212,6 +212,7 @@
 
     // 17 - update the status
     document.queryfSelector("#status").innerHTML = "<b>Success!</b>";
+}
 
     function dataError(e){
         console.log("An error occurred");

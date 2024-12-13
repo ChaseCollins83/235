@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+ 	<title>Rick and Morty Battle Royale</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        window.onload = (e) => {document.querySelector("#search").onclick = search};
+
+        const url = "https://rickandmortyapi.com/api";
+        let term = "";
+
+        document.addEventListener("click", function(e){
+        let target = e.target.closest(".result");
+        if(target){
+            add();
+        }
+    })
+
+        function search() {
+            let tempUrl = url;
+
+            term = document.querySelector("#searchterm").value;
+            term = term.trim();
+            term = encodeURIComponent(term);
+            if(term.length < 1) return;
+            //url += "/characters?name=" + term;
+            tempUrl += "/character";
+            tempUrl += "/?name=" + term;
+
+            getData(tempUrl);
+            console.log(tempUrl);
+        }
+
+        function getData(url){
+        let xhr = new XMLHttpRequest();
+
+        xhr.onload = dataLoaded;
+
+        xhr.onerror = dataError;
+
+        xhr.open("GET",url);
+        xhr.send();
+    }
+
+    function add(e){
+        document.querySelector("#roster").innerHTML += e.target.name;
+    }
+
+    function dataLoaded(e){
+        let xhr = e.target;
+
+        console.log(xhr.responseText);
+
+        let obj = JSON.parse(xhr.responseText);
+
+        let results = obj.results;
+        console.log("results.length = " + results.length);
+        let bigString = "<p><i>Here are " + results.length + " results for '" + term + "'</i></p>";
+
+        for (let i=0;i<results.length;i++){
+            let result = results[i];
+
+
+        let line = `<div class='result'><img src='${result.image}' title= '${result.name}'/> <p>${result.name}</p> <button type="button" id='${result.name}'' class="add">Add</button></div>`;
+        
+
+        bigString += line;
+
+        //document.querySelector(`#${result.name}`).onclick = add;
+    }
+
+    document.querySelector("#content").innerHTML = bigString;
+}
+
+    function dataError(e){
+        console.log("An error occurred");
+    }
+
+    
+
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Rick and Morty Battle Royale</h1>
+    </header>
+
+    <input id="searchterm" type="text" size="20"/>
+    <button type="button" id="search" class="green">Search</button>
+
+    <div id="roster">
+        <h2>Your Roster:</h2>
+
+    </div>
+
+    <div id="content">
+
+    </div>
+</body>
